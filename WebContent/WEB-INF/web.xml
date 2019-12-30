@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	
+	<servlet>
+		<servlet-name>contact</servlet-name>
+		<servlet-class>email.SendEmailTLS</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>write</servlet-name>
+		<servlet-class>qna.Write</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>comment</servlet-name>
+		<servlet-class>comment.Comment</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>main</servlet-name>
+		<servlet-class>photo.View3PhotosHandler</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>contact</servlet-name>
+		<url-pattern>/contact</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>write</servlet-name>
+		<url-pattern>/write</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>comment</servlet-name>
+		<url-pattern>/comment</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>main</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
+
+</web-app>

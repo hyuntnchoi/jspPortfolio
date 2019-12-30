@@ -1,0 +1,300 @@
+/* Common Factors */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #004f9d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0080ff;
+}
+
+
+/* Main Page Layout */
+.wrapper {
+	margin: 0 auto;
+	width: 900px;
+	display: grid;
+	grid-template-columns: 3.5fr 1.5fr;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "header  header"
+						 "content sidebar"
+						 "footer  sidebar";
+}
+.header {
+	grid-area: header;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	margin-left: 10px;
+	margin-top: 50px;
+}
+
+.content {
+	margin-top: 50px;
+	grid-area: content;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+
+
+/* Header */
+.header_image {
+	border-bottom: 1px solid gray;
+	margin: 0;
+	padding: 40px;
+	background-image: url("images/portfolio.png");
+	background-repeat: no-repeat;
+}
+.header_image a {
+	float: right;
+	margin-top: -18px;
+}
+.header_image .header_setting #mySetting {
+	cursor: pointer;
+	float: right;
+	margin-top: -18px;
+	padding-left: 20px;
+}
+.header_navbar {
+	width: 50%;
+	padding-top: 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+.header_navbar li {
+	border-right: 1px solid gray;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	list-style: none;
+	float: left;
+	width: 33%;
+}
+.header_navbar li:last-child { border-right: none; }
+.header_navbar a:hover { color: gray; }
+.header_navbar strong { 
+	font-family: 'Sunflower', cursive;
+	font-size: 15px;
+	margin: 0;
+}
+
+
+
+/* Content Title in Main Page  */
+.content_top {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+}
+.content_top div:nth-child(2) {
+	padding-left: 100px;
+}
+.content_top p {
+	font-family: 'Noto Serif KR', cursive;
+	font-size: 30px;
+	margin: 0;
+}
+
+
+
+/* Content in Main Page */
+.content #dailylife {
+	margin-bottom: 130px;
+}
+.content #qna {
+	margin-bottom: 100px;
+}
+
+
+
+/* Footer */
+.footer p {
+	font-family: 'Noto Serif KR', cursive;
+	font-size: 30px;
+	margin: 0;
+}
+
+
+
+/* View More Photos */
+.photolist {
+	display: grid;
+    border-collapse: collapse;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+}
+.photolist div:nth-child(4) {
+	
+}
+.photolist img {
+	width: 100%;
+}
+
+
+
+/* QnA 목록 보여주는 곳 */
+.qna {
+	width: 97.5%;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    margin-botton: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.qna th, td {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}
+.qna .qna_columns {
+	background-color: #999;
+    font-size: 1.1em;
+    color: #fff;
+    border-width:2px 0;
+    text-align: center;
+}
+.qna td:first-child {
+	width: 40px;
+	text-align: center;
+}
+.qna td:last-child {
+	width: 100px;
+	text-align: center;
+}
+.qna .qna_bottom td {
+	border: hidden;
+	border-top: 1px solid #ccc;
+}
+
+
+
+/* Q&A 전체 레이아웃 */
+.qna_content {
+	border-collapse: collapse;
+	width: 95%;
+	margin: 0 auto;
+}
+.qna_content .qna_title {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.qna_content .qna_date {
+	font-size: 10px;
+	float: right;
+}
+.qna_content .qna_text {
+	border-bottom: 1px solid gray;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.qna_commentList {
+	border-top: 1px solid gray;
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+
+
+
+/* Q&A 댓글 보여주는 공간 */
+.qna_commentList span:nth-child(2) {
+	float: right;
+	font-size: 60%;
+}
+
+
+
+/* Q&A 댓글 작성란 */
+.qna_commentWrite {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 3.5fr 1.5fr;
+	grid-template-rows: auto auto;
+	border-top: 1px solid gray;
+}
+.qna_commentWriter .textarea {
+	grid-area: textarea;
+	grid-column: 1 / 2;
+}
+#commentWrite {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	padding-bottom: 10px;	
+}
+.qna_commentWriter .writer {
+	grid-area: writer;
+	grid-column: 2/3;	
+}
+#commentSubmit {
+	grid-area: submit;
+	grid-column: 2/3;
+	padding-left: 30px;
+}
+
+
+
+/* 사이드바 */
+.sidebar p {
+	font-family: 'Sunflower', cursive;
+	font-size: 25px;
+	margin: 0;
+}
+.sidebar_wrapper {
+	/* sticky */
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+
+/* footer 이메일 */
+.email_container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+
+/* 관리자 페이지 */
+.admin_header {
+	border-bottom: 1px solid gray;
+}
+.admin_header, .admin_main p {
+	font-family: 'East Sea Dokdo', cursive;
+	font-size: 30px;
+	margin: 0 auto;
+	text-align: center;
+}

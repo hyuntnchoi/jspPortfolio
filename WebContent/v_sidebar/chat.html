@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/qna.css">
+	<script type="text/javascript">
+		var websocket = new WebSocket("ws://112.144.15.236:8080/portfolio/WebSocket");
+		websocket.onmessage = function processMessage(event) {
+			var jsonData = JSON.parse(event.data);
+			if(jsonData.msg != null) msgTextArea.value += jsonData.msg + "\n";
+		}
+		function sendMsg() {
+			websocket.send(msgText.value);
+			msgText.value = "";
+		}
+		// keep scroll bar at the bottom (need to edit as not working when the other person types)
+		function gotoBottom(){
+			var element = document.getElementById("msgTextArea");
+			element.scrollTop = element.scrollHeight - element.clientHeight;
+		}
+	</script>
+</head>
+<body>
+
+	<p>실시간 문의</p>
+	<textarea id="msgTextArea" readonly="readonly" rows="10" cols="20"></textarea><br/>
+	<input type="text" id="msgText" size="19" />
+	<button id="btn" onclick="sendMsg(); gotoBottom()">전송</button>
+	<!-- code for enter key activation(not working if put in the head tag) -->
+	<script>
+	var input = document.getElementById("msgText");
+		input.addEventListener("keyup", function(event) {
+		   if(event.keyCode === 13) {
+		   event.preventDefault();
+		   document.getElementById("btn").click();
+		   }
+	});
+	</script>
+	
+</body>
+</html>
