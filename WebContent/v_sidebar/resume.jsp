@@ -116,7 +116,7 @@ var img = document.getElementById("myImg");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 img.onclick = function() {
-  var pw1 = "11111100011"
+  var pw1 = "11111100100"
   var pw2 = prompt("비밀번호를 입력해주세요.\n힌트: 올해를 2진수로 바꾸면?");
   if(pw1 == pw2) {
 	 modal.style.display = "block";
